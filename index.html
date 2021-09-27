@@ -1,0 +1,131 @@
+Mustapha Bouchaqour
+Data Science Fellow
+The Knowledge House
+ 
+GitHub is a great platform for developers and programmers to collaboratively work on code. In this article I will walk you through the main process needed to get your first GitHub page work and ready.  However, before we start, I would like to say that the primary benefit of GitHub is its version control system, which allows for seamless collaboration without compromising the integrity of the original project. On average, over 32 million people worldwide are pushing their changes, pulling from a change, creating their own new personalized repositories or simply cloning someone else's to fiddle with. 
+Requirements:
+1- PC - Windows [I would prefer to work with PowerShell] if you have Windows 10, PowerShell is integrated with it.
+
+Outline:
+➢	1 - Cover some commands using PowerShell / Getting some familiarity with commands
+➢	2- Selecting the GitHub page need to work with
+➢	3- Creating a “work_class” folder in our machine, where we want to store data/ get a connection with the GitHub page.
+➢	4- Do some magic with the “work_class” folder.
+○   	4.1 → check the entire folder using “DIR”
+○   	4.2 → Get connection to GitHub
+○   	4.3→ Check our connection
+○   	4.4 → Recheck the entire folder
+➢	5- Maintain connection to the host/upstream
+➢	6- Pushing our changes to our GitHub page.
+1-  Cover some commands using PowerShell / Getting some familiarity with commands
+To get to the directory where I have the folders I am working on. Using the command “cd”
+ 
+To show all folder and files in the folder: Using “Dir”
+ 
+To check connection to Git/GitHub workflow: Using git remote - v
+ 
+ 
+For more Information about GitHub commands please check this article: git-cheat-sheet-education (github.com)
+ 
+ 
+2- Selecting the GitHub page need to work with
+●   	Scenario: At your job or the program you follow, there is a GitHub page that you were asked to fork and get connected with to follow all the work shared with you.
+1 - Here is an example of a GitHub page that you would like to get connected to.
+
+  	1-1: Check the bottom “Fork” at the top to the right and click on it. The result should look   as the following:
+ 
+        	You should be able to see the change your GitHub name follows with the folder name you forked.
+3- Creating a “work_class” folder in our machine, where we want to store data/ get a connection with the GitHub page.
+For instance, I wanted my data to be in the folder __fall21__ I already have at partition E.  Here is how I would do that:
+ 
+Using PowerShell:
+        	PS C:\USERS\musta> -----< this is a default path at my local machine>
+        	PS C:\USERS\musta> cd E:\__fall21__ -----> Press Enter
+        	PS E:\__fall21__>mkdir my_fork_tkh21 ------<Press Enter 
+Now you should be able to see that:
+ Directory: E:\__fall21__ 
+Mode             	LastWriteTime     	Length Name
+----             	-------------     	------ ----
+d-----     	9/24/2021  10:30 PM            	my_fork_tkh21
+PS E:\__fall21__>dir ---> to check all the folders and files in the path
+Now, If I check the folder __fall21__  I should be able to this:
+	Directory: E:\__fall21__
+ 
+Mode             	LastWriteTime     	Length Name
+----     	        -------------     	------ ----
+d-----     	8/25/2021   9:00 AM                CST_3512_Information_and_Data_Managment_2
+d-----     	8/25/2021   9:01 AM                CST_2412_Data_Security_Privacy_and_Ethics
+d-----     	8/25/2021   9:01 AM            	CST_3502_Data_Mining
+d-----     	8/27/2021   5:24 PM            	Internship Class
+d-----     	8/25/2021   9:02 AM            	Phi_2202_Id was dropped
+d-----      	9/7/2021   5:26 PM            	TKH
+d-----     	9/10/2021  12:14 AM            	CTP
+d-----     	9/16/2021  12:00 AM            	my_fork_tkh21 [ My folder was created in this path]
+d-----     	9/21/2021   5:43 PM            	U.S Dep Internship
+d-----     	9/24/2021  10:30 PM            	nothing
+-a----     	8/26/2021  10:22 AM      	49436 How to register the program for the online certificate.pdf
+-a----      	9/2/2021  12:43 PM       	1240 Study_Time_Fall21
+-a----     	8/28/2021   1:31 PM      	17464 Resume_Update.docx
+PS E:\__fall21__>
+        	So far, we have created a folder my_fork_tkh21. We need to get connected to local GitHub ( to your GitHub).
+ 
+
+
+Step 1:
+-         Click on Code and copy the path.
+ 
+Step 2 : Back to your folder using PowerShell.
+        	You should have something like this:
+        	E:\__fall21__>my_fork_tkh21>
+Type git clone and post the path you copy from your github
+        	E:\__fall21__>my_fork_tkh21>git clone [My GitHub path]
+Step 3: You should be able to see new folders on your current folder. To check that type “DIR”
+        	E:\__fall21__>my_fork_tkh21>dir
+ 
+You will be able to see the folder “DS2022”. Next step is to get inside the folder DS2022.
+E:\__fall21__>my_fork_tkh21>cd DS2022   [press Enter]
+E:\__fall21__>my_fork_tkh21>DS2022>git remote -v
+You should be able to see
+Origin ["your GitHub link"] (fetch)
+Origine ["your GitHub link"] (push)
+
+At this stage, you have forked the original GitHub, created your class_work and made a connection between your local folder and GitHub page. Your local folder is my_for_tkh21. All data that was shared with you in the first place, will be placed in the folder my_fork_tkh21 inside the folder ds2022.
+4- Do some magic with the “work_class” folder. 
+o  4.1 → check the
+entire folder using “DIR”
+  
+E:\__fall21__>my_fork_tkh21>ds2022>dir   [press Enter]
+o  4.2 → Get connection to GitHub
+We did that above.
+o  4.3→ Check our
+connection
+E:\__fall21__>my_fork_tkh21>ds2022>git
+status [press enter]
+5- Maintain connection to the host/upstream
+Part1 – Maintaining connection to the host/upstream
+The most interesting part people tend to get it wrong or to forget about is maintaining connection to GitHub Host page. Once you created your first GitHub page and you forked it, and you go to your class folder and make changes and connection to your GitHub page, ask yourself this question: how will you be able to update your GitHub page from the Host GitHub page.
+Step_1: Go to GitHub page, the origin host page from where you forked first time. Copy the link of the origin GitHub page.
+Step_2: Back to your folder at this case your folder in your machine. Lunch the PowerShell
+E:\classWork\ds2022>git remote add upstream [Source GitHub link]
+E:\classWork\ds2022>git remote -v
+You should be able to see this:
+
+ 
+There was a fetch and push from your GitHub page (Origin), but now you can also see fetch and push from the upstream GitHub page.
+Part2 – Keep updating our GitHub page
+Since we maintain connection to GitHub Host, we want to update our page with new materials that were added to the GitHub host page.
+E:\classWork\ds2022>git pull upstream main [press enter]  à will grab the update from the host to your local machine
+E:\classWork\ds2022>Dir [press enter] à you should be able to see the change.
+E:\classWork\ds2022>git push origin main [press enter] --->will grab the push from the local to your GitHub origin
+Now, the last two commands git pull upstream main and git push origin main are needed all the time when you want to update your GitHub page along with your local folder.
+ 6 - Pushing changes to our GitHub page.
+Let’s say that you have done some work and want to push your work back into your GitHub page (Origin), and also want your work to be shared.
+E:\classWork\ds2022>git add *   à add all the changes you have made
+E:\classWork\ds2022>git commit -m “You can add your comments here”
+E:\classWork\ds2022>git push à Finally you want to push your changes.
+ 
+To check your work. Go to your GitHub page and see if the changes you make are there.
+ 
+I hope this brief tutorial was helpful to you.
+Good luck. 
+
